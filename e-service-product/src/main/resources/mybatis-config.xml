@@ -13,8 +13,7 @@
 	</typeAliases>
 	
 	<!-- Mapper 位置 配置
-	<mappers>
-	</mappers>
+
 	 -->
 
 </configuration>

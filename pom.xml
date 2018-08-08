@@ -46,6 +46,7 @@
         <cglib-version>2.2.2</cglib-version>
         <slf4j-api-version>1.6.6</slf4j-api-version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jetty.version>9.4.12.RC1</jetty.version>
     </properties>
 
 
@@ -224,6 +225,8 @@
         <artifactId>json</artifactId>
         <version>20131018</version>
     </dependency>
+
+
         <!--page -->
        <!-- <dependency>
             <groupId>com.babasport</groupId>
@@ -326,6 +329,13 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
                 <version>2.5</version>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>${jetty.version}</version>
             </plugin>
         </plugins>
     </build>
