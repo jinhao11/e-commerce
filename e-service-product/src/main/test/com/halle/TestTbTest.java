@@ -2,6 +2,8 @@ package com.halle;
 
 import com.halle.core.bean.TestTb;
 import com.halle.core.dao.TestTbDao;
+import com.halle.core.service.TestDBService;
+import com.halle.core.service.TestDBService2;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,13 @@ public class TestTbTest {
 
 	@Autowired
 	private TestTbDao testTbDao;
+
+
+    @Autowired
+    private TestDBService2 testDBService2;
+
+    @Autowired
+    private TestDBService testDBService;
 	
 	@Test
 	public void testDaoInsert() throws Exception {
@@ -32,4 +41,27 @@ public class TestTbTest {
 		
 		
 	}
+
+
+    @Test
+    public void testTransctionServiceInsert() throws Exception {
+        TestTb testTb = new TestTb();
+        testTb.setName("范冰冰3");
+        testTb.setBirthday(new Date());
+
+        testDBService.insertTestDB(testTb);
+
+
+    }
+
+    @Test
+    public void testTransctionPropagationServiceInsert() throws Exception {
+        TestTb testTb = new TestTb();
+        testTb.setName("范冰冰3");
+        testTb.setBirthday(new Date());
+
+        testDBService2.insertTestDB(testTb);
+
+
+    }
 }
