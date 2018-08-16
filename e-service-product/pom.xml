@@ -14,8 +14,6 @@
     <version>1.1-SNAPSHOT</version>
 
 
-
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -90,6 +88,18 @@
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.101tec</groupId>
+            <artifactId>zkclient</artifactId>
+            <version>0.4</version>
+        </dependency>
         <!-- jdbc driver -->
         <dependency>
             <groupId>mysql</groupId>
@@ -115,6 +125,23 @@
         </dependency>
 
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>${jetty.version}</version>
+                <configuration>
+                    <httpConnector>
+                        <port>9090</port>
+                    </httpConnector>
+
+                </configuration>
+            </plugin>
+        </plugins>
+
+
+    </build>
 
 
 </project>

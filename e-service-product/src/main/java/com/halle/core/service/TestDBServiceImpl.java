@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-@Service
+@Service("testDBService")
 @Transactional(propagation =  Propagation.NESTED)
 public class TestDBServiceImpl implements TestDBService{
     @Autowired
@@ -18,7 +18,6 @@ public class TestDBServiceImpl implements TestDBService{
 
         testTbDao.insertTestTb(testTb);
 
-        throw new RuntimeException();
     }
 
 }

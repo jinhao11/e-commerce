@@ -22,13 +22,11 @@
 
 	<!--Dubbo提供方-->
     <!--1.名称 计算机 唯一标识-->
-    <dubbo:application name="e-commerce-product"/>
+    <dubbo:application  name="e-commerce-console"/>
     <!--2.注册中心地址-->
     <dubbo:registry address="192.168.0.113:2181" protocol="zookeeper"/>
-	<!--3.协议-->
-    <dubbo:protocol port="20880" name="dubbo"/>
-    <!--4.暴露实现类-->
-    <dubbo:service interface="com.halle.core.service.TestDBService" ref="testDBService"/>
+	<!--4.调用接口-->
+    <dubbo:reference interface="com.halle.core.service.TestDBService" id="testDBService"/>
 
 
 

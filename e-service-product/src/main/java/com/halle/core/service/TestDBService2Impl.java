@@ -10,8 +10,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Date;
 
-@Service
-@Transactional(propagation = Propagation.REQUIRED)
+/*@Service
+@Transactional(propagation = Propagation.REQUIRED)*/
 public class TestDBService2Impl implements  TestDBService2 {
     @Autowired
     private TestDBService  testDBServiceImpl;
